@@ -59,7 +59,7 @@ class DressesController < ApplicationController
   def destroy
     @dress.destroy
     respond_to do |format|
-      format.html { redirect_to dresses_url, notice: 'Dress was successfully destroyed.' }
+      format.html { redirect_to dresses_url, notice: 'Wedding Dress was successfully removed.' }
       format.json { head :no_content }
     end
   end
@@ -72,7 +72,7 @@ class DressesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dress_params
-      params.require(:dress).permit(:name, :color, :size, :description, :price)
+      params.require(:dress).permit(:name, :color, :size, :description, :price, :category_id)
     end
 
     def set_categories

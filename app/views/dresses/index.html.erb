@@ -1,2 +1,24 @@
-<h1>Dresses#index</h1>
-<p>Find me in app/views/dresses/index.html.erb</p>
+<p id="notice"><%= notice %></p>
+ 
+ <div class="container">
+ <h1> Wedding dresses! </h1>
+  <div class="card-deck"> 
+  <% @dresses.each do |dress| %> 
+      
+      <div class="card mb-4" style="min-width: 18rem;">
+        <div class="card-body">
+            <h5 class="card-title"><%=dress.name%></h5>
+            <h6 class="card-subtitle mb-2 text-muted"><%=dress.category.name%></h6>
+            <p class="card-text mt-2"><%=dress.color %></p>
+            <p class="card-text mt-2"><%=dress.size %></p>
+            <p class="card-text"><small class="text-muted">Price <%=dress.price%></small></p>
+            <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
+            <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+        </div>
+      </div> 
+  
+  <%end%> 
+  </div> 
+  </div>
+
+<%= link_to 'New Wedding Dress', new_dress_path %>

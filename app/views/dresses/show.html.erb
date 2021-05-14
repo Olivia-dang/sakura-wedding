@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+<h1> <%= @dress.name%> </h1>
+<h5> <%= @dress.category.name%> </h5>
+
+<p>
+  <%= @dress.name %>
+  <%= @dress.color %>
+  <%= @dress.size %>
+  <%= @dress.description %>
+  <%= @dress.price %>
+</p>
+
+<%= link_to 'Edit', edit_dress_path(@dress) %> |
+<%= link_to 'Back', dresses_path %>
