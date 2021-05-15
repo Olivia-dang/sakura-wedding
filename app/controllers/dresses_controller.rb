@@ -2,6 +2,7 @@ class DressesController < ApplicationController
   before_action :set_dress, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:edit, :new]
 
+
   # GET /dresses
   # GET /dresses.json
   def index

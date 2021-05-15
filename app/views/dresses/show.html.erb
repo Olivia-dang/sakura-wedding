@@ -1,14 +1,17 @@
 <p id="notice"><%= notice %></p>
-<h1> <%= @dress.name%> </h1>
-<h5> <%= @dress.category.name%> </h5>
+<div class="container">
+  <h1> <%= @dress.name%> </h1>
+  <h5> <%= @dress.category.name%> </h5>
 
-<p>
-  <%= @dress.name %>
-  <%= @dress.color %>
-  <%= @dress.size %>
-  <%= @dress.description %>
-  <%= @dress.price %>
-</p>
+  <p>
+    <%= @dress.name %>
+    <%= @dress.color %>
+    <%= @dress.size %>
+    <%= @dress.description %>
+    <%= @dress.price %>
+  </p>
 
-<%= link_to 'Edit', edit_dress_path(@dress) %> |
-<%= link_to 'Back', dresses_path %>
+  <%=link_to 'Edit', edit_dress_path, class: "btn btn-warning"%>
+  <%=link_to 'Delete', dress_path, class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+  <%= link_to 'Back', dresses_path, class:"btn btn-secondary" %>
+</div>

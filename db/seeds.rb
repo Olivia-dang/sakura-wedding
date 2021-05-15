@@ -9,9 +9,9 @@ require 'faker'
 
 categories = [
     "A-line", 
-    "Trumpet/Fit-and-Flare", 
+    "Trumpet", 
     "Mermaid", 
-    "Sheath/Column", 
+    "Sheath", 
     "Jumpsuit"
 ]
 
