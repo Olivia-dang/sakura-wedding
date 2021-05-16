@@ -63,3 +63,5 @@ gem 'bootstrap-sass'
 gem 'jquery-rails'
 
 gem 'devise'
+
+gem "aws-sdk-s3", "~> 1.94"

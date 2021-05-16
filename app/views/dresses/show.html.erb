@@ -12,7 +12,7 @@
     <%= @dress.user.username %>
   </p>
 
-  <% if dress.user == current_user %>
+  <% if @dress.user == current_user %>
   <%=link_to 'Edit', edit_dress_path, class: "btn btn-warning"%>
   <%=link_to 'Delete', dress_path, class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
   <% else %>

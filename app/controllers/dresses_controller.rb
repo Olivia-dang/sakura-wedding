@@ -73,7 +73,7 @@ class DressesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dress_params
-      params.require(:dress).permit(:name, :color, :size, :description, :price, :category_id, :user_id)
+      params.require(:dress).permit(:name, :color, :size, :description, :price, :category_id, :user_id, :picture)
     end
 
     def set_categories
