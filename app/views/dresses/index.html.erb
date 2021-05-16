@@ -1,19 +1,23 @@
-<p id="notice"><%= notice %></p>
  
- <div class="container">
- <h1> Wedding dresses! </h1>
+<div class="container">
+ <h1> Sakura Wedding </h1>
   <div class="card-deck"> 
-    <% @dresses.each do |dress| %> 
-        <div class="card" style="width: 18rem;">
-          <img src="..." class="card-img-top" alt="...">
-          <div class="card-body">
+  <% @dresses.each do |dress| %> 
+      <div class="card mb-4" style="width: 18rem;">
+        <div class="card-body">
             <h5 class="card-title"><%=dress.name%></h5>
-            <p class="card-text mt-2">Color: <%=dress.color %></p>
-            <h4 class="card-text">Price: AUD$<%=dress.price%></h5>
-            <a href="#" class="btn btn-primary">Buy</a>
-          </div>
+            <h6 class="card-subtitle mb-2 text-muted"><%=dress.color%></h6>
+            <p class="card-text mt-2"><%=dress.price %></p>
+            <% if dress.user == current_user %>
+              <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
+              <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+            <% else %>
+              <a href="#" class="btn btn-primary">Buy</a>
+            <% end %>
         </div>
-    <%end%> 
+      </div> 
+  <%end%> 
+  </div> 
   </div>
 
 <%= link_to 'New Wedding Dress', new_dress_path, class:"btn btn-secondary" %>

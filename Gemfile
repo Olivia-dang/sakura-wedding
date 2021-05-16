@@ -61,3 +61,5 @@ gem "rspec-rails", group: [:development, :test]
 gem 'bootstrap-sass'
 
 gem 'jquery-rails'
+
+gem 'devise'

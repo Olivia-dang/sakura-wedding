@@ -1,7 +1,7 @@
 class DressesController < ApplicationController
   before_action :set_dress, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:edit, :new]
-
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
 
   # GET /dresses
   # GET /dresses.json
@@ -26,7 +26,7 @@ class DressesController < ApplicationController
   # POST /dresses
   # POST /dresses.json
   def create
-    @dress = Dress.new(dress_params)
+    @dress = current_user.dresses.build(dress_params)
 
     respond_to do |format|
       if @dress.save
@@ -73,10 +73,11 @@ class DressesController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def dress_params
-      params.require(:dress).permit(:name, :color, :size, :description, :price, :category_id)
+      params.require(:dress).permit(:name, :color, :size, :description, :price, :category_id, :user_id)
     end
 
     def set_categories
       @categories = Category.all
     end 
+
 end

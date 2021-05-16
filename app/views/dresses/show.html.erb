@@ -1,4 +1,4 @@
-<p id="notice"><%= notice %></p>
+
 <div class="container">
   <h1> <%= @dress.name%> </h1>
   <h5> <%= @dress.category.name%> </h5>
@@ -9,9 +9,14 @@
     <%= @dress.size %>
     <%= @dress.description %>
     <%= @dress.price %>
+    <%= @dress.user.username %>
   </p>
 
+  <% if dress.user == current_user %>
   <%=link_to 'Edit', edit_dress_path, class: "btn btn-warning"%>
   <%=link_to 'Delete', dress_path, class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+  <% else %>
+  <a href="#" class="btn btn-primary">Buy</a>
+  <% end %>
   <%= link_to 'Back', dresses_path, class:"btn btn-secondary" %>
 </div>
