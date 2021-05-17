@@ -4,28 +4,27 @@
   </div>
 </section>
 
+<div> <h3>All dresses</h3> </div>
 
-<div class="container">
- <h1> Sakura Wedding </h1>
-  <div class="card-deck"> 
-  <% @dresses.each do |dress| %> 
-      <div class="card mb-4" style="width: 18rem;">
-        <%= image_tag dress.picture, class: "card-img-top" if dress.picture.attached? %>
-        <div class="card-body">
-            <h5 class="card-title"><%=dress.name%></h5>
-            <h6 class="card-subtitle mb-2 text-muted"><%=dress.color%></h6>
-            <p class="card-text mt-2">AUD$<%=dress.price %></p>
-            <% if dress.user == current_user %>
-              <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
-              <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
-            <% else %>
-              <a href="#" class="btn btn-primary">Buy</a>
-            <% end %>
-        </div>
-      </div> 
-  <%end%> 
+  <div class="card-deck d-flex justify-content-between align-items-stretch flex-wrap"> 
+    <% @dresses.each do |dress| %> 
+        <div class="card mb-4" style="width: 280px;">
+          <%= image_tag dress.picture, class: "card-img-top" if dress.picture.attached? %>
+          <div class="card-body">
+              <h5 class="card-title"><%=dress.name%></h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%=dress.color%></h6>
+              <p class="card-text mt-2">AUD$<%=dress.price %></p>
+              <% if dress.user == current_user %>
+                <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
+                <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+              <% else %>
+                <a href="#" class="btn btn-primary">Buy</a>
+              <% end %>
+          </div>
+        </div> 
+    <%end%> 
   </div> 
-  </div>
+
 
 <%= link_to 'New Wedding Dress', new_dress_path, class:"btn btn-secondary" %>
 
