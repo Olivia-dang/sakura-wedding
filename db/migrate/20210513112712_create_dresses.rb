@@ -5,7 +5,7 @@ class CreateDresses < ActiveRecord::Migration[6.1]
       t.string :color
       t.string :size
       t.text :description
-      t.decimal :price, precision: 10, scale: 2
+      t.integer :price
 
       t.timestamps
     end

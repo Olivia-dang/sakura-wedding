@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_05_16_133745) do
+ActiveRecord::Schema.define(version: 2021_05_17_035544) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -54,13 +54,25 @@ ActiveRecord::Schema.define(version: 2021_05_16_133745) do
     t.string "color"
     t.string "size"
     t.text "description"
-    t.decimal "price", precision: 10, scale: 2
+    t.integer "price"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.bigint "category_id", null: false
     t.bigint "user_id", null: false
     t.index ["category_id"], name: "index_dresses_on_category_id"
     t.index ["user_id"], name: "index_dresses_on_user_id"
+  end
+
+  create_table "transactions", force: :cascade do |t|
+    t.bigint "seller_id", null: false
+    t.bigint "buyer_id", null: false
+    t.bigint "dress_id", null: false
+    t.integer "amount", default: 0
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["buyer_id"], name: "index_transactions_on_buyer_id"
+    t.index ["dress_id"], name: "index_transactions_on_dress_id"
+    t.index ["seller_id"], name: "index_transactions_on_seller_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -80,4 +92,5 @@ ActiveRecord::Schema.define(version: 2021_05_16_133745) do
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "dresses", "categories"
   add_foreign_key "dresses", "users"
+  add_foreign_key "transactions", "dresses"
 end
