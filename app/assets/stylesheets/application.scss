@@ -16,12 +16,14 @@
 @import "bootstrap";
 
 // Style the homepage background
-.wedding-dress-image {
+.jumbotron {
     background-image: url("wedding-dress.jpg");
     width: 100%;
     height: 100vh;
     background-size: cover;
     background-position: center right;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
 }
 
 .header-greetings {
@@ -39,4 +41,9 @@
 
 .show-info {
     margin: 0 8px;
+}
+
+.navbar {
+    margin-bottom: 0;
+    padding-left: 20px;
 }
