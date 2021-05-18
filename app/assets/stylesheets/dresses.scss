@@ -2,3 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
+// Style the homepage background
+.jumbotron {
+    background-image: url("wedding-dress.jpg");
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    background-position: center right;
+    background-attachment: scroll;
+    background-repeat: no-repeat;
+}
