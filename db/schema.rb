@@ -93,4 +93,6 @@ ActiveRecord::Schema.define(version: 2021_05_17_035544) do
   add_foreign_key "dresses", "categories"
   add_foreign_key "dresses", "users"
   add_foreign_key "transactions", "dresses"
+  add_foreign_key "transactions", "users", column: "buyer_id"
+  add_foreign_key "transactions", "users", column: "seller_id"
 end
