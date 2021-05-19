@@ -17,7 +17,7 @@
 @import "bootstrap-sprockets";  
 @import "bootstrap";
 
-//Style header navbar
+//Style header banner text
 .header-greetings {
     position: relative;
     top: 50%;
@@ -31,20 +31,16 @@
     }
 }
 
-.show-info {
-    margin: 0 8px;
+
+//Remove space between navbar and index header background image & indent the navbar
+.navbar {
+    padding-left: 30px;
+    //Add more space to navbar items
+    .navbar-right {
+        margin-right: 20px;
+    }
+    .nav-item {
+        margin: 0 15px;
+    }
 }
 
-.navbar {
-    margin-bottom: 0;
-    padding-left: 20px;
-}
-.nav-item {
-    padding-top: 6px;
-}
-.form-inline {
-    padding-top: 10px;
-}
-.navbar-brand {
-    margin-bottom: 5px;
-}
