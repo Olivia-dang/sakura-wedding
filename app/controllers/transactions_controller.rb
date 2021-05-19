@@ -4,14 +4,13 @@ class TransactionsController < ApplicationController
     
     before_action :set_dress, only: [:create]
     def create
-        puts params
         session = Stripe::Checkout::Session.create({
             payment_method_types: ['card'],
             customer_email: current_user.email,
             line_items: [
                {
                 price_data: {
-                    unit_amount: (@dress.price/100),
+                    unit_amount: (@dress.price_in_cents),
                     currency: 'aud',
                     product_data: {
                         name: @dress.name

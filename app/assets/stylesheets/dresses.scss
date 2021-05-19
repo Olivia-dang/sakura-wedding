@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
 
-// Style the homepage background
+// Style the homepage background image
 .jumbotron {
     background-image: url("wedding-dress.jpg");
     width: 100%;
@@ -11,4 +11,11 @@
     background-position: center right;
     background-attachment: scroll;
     background-repeat: no-repeat;
+}
+
+// Index card image
+.card-img-top {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
 }

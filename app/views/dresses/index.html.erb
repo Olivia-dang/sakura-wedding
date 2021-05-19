@@ -16,12 +16,12 @@
                 <%=link_to dress.name, dress_path(dress)%>
               </h5>
               <h6 class="card-subtitle mb-2 text-muted"><%=dress.color%></h6>
-              <p class="card-text mt-2">AUD$<%=(dress.price)/100 %></p>
+              <p class="card-text mt-2">AUD$<%=dress.price %></p>
               <% if dress.user == current_user %>
                 <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
                 <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
               <% else %>
-                <a href="#" class="btn btn-primary">Buy</a>
+                <%=link_to 'Buy now', dress_path(dress), class: "btn btn-primary"%>
               <% end %>
           </div>
         </div> 

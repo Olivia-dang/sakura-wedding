@@ -27,7 +27,8 @@ class DressesController < ApplicationController
   # POST /dresses.json
   def create
     @dress = current_user.dresses.build(dress_params)
-
+    @dress.price_in_cents= (params[:dress][:price].to_f*100).to_i
+    
     respond_to do |format|
       if @dress.save
         format.html { redirect_to @dress, notice: 'Wedding Dress was successfully created.' }

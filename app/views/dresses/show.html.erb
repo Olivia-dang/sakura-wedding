@@ -6,7 +6,7 @@
       <h5> <%= @dress.category.name%> </h5>
       <p>Color: <%= @dress.color %></p>
       <p>Size: <%= @dress.size %></p>
-      <p>Price: <strong>AUD$ <%= (@dress.price)/100 %></strong></p>
+      <p>Price: <strong>AUD$ <%= @dress.price %></strong></p>
       <p>Seller: <%= @dress.user.username %></p>
       <p>Product Description: <%= @dress.description %></p>
       <% if @dress.user == current_user %>
@@ -17,7 +17,7 @@
       <% end %>
       <br>
       <br>
-      <%= link_to 'Back to Homepage', dresses_path, class:"btn btn-outline-secondary btn-sm" %>
+      <%= link_to 'Back to Homepage', dresses_path, class: "btn btn-info" %>
     </div>
   </div>
 </div>

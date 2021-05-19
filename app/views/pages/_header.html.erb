@@ -20,21 +20,11 @@
         </li>
         <li class="nav-item">
           <%= link_to 'Sell an item', new_dress_path, class: "nav-link" %>
-        </li>        
-        <li class="nav-item dropdown">
-          <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-            My Account
-          </a>
-          <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-            <li><a class="dropdown-item" href="#">Account Summary</a>
-              <%= link_to 'Edit profile', edit_user_registration_path, :class => 'dropdown-item' %>
-            </li>
-            <li><a class="dropdown-item" href="#">Seller History</a></li>
-            <li><a class="dropdown-item" href="#">Buyer History</a></li>
-            <li><hr class="dropdown-divider"></li>
-            <li><%= link_to "Logout", destroy_user_session_path, method: :delete, :class => 'dropdown-item'  %></li>
-          </ul>
-        </li>
+        </li>  
+        <li class="nav-item">
+          <%= link_to 'My account', edit_user_registration_path, class: "nav-link" %>
+        </li>      
+        
         <li class="navbar-text">
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.username %></strong>  |
