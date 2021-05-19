@@ -1,7 +1,7 @@
 class DressesController < ApplicationController
   before_action :set_dress, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:edit, :new]
-  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy]
+  before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
 
   # GET /dresses
   # GET /dresses.json
