@@ -1,0 +1,45 @@
+<!-- Site footer -->
+    <footer class="site-footer">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-6 col-md-3">
+            <h6>Account Management</h6>
+            <ul class="footer-links">
+              <li><%= link_to 'My account', edit_user_registration_path %></li>
+              <li><%= link_to 'Sell an item', new_dress_path %></li>
+            </ul>
+          </div>
+
+          <div class="col-xs-6 col-md-3">
+            <h6>Company</h6>
+            <ul class="footer-links">
+                <li><%= link_to 'Home', root_path %></li>
+                <li><%= link_to 'About', about_us_path %></li>
+                <li><%= link_to 'Contact', contact_us_path %></li>
+            </ul>
+          </div>
+
+          <div class="col-sm-12 col-md-6">
+            <h6>About</h6>
+            <p class="text-justify">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure a in repellat cum voluptates ad voluptatem sapiente labore non officiis aliquid, modi excepturi illum nihil recusandae tempore magnam pariatur ratione.</p>
+          </div>
+        </div>
+        <hr>
+      </div>
+      <div class="container">
+        <div class="row">
+          <div class="col-md-8 col-sm-6 col-xs-12">
+            <p class="copyright-text">Copyright &copy; 2021 All Rights Reserved by <%= link_to 'Sakura Wedding', root_path %>.
+            </p>
+          </div>
+
+          <div class="col-md-4 col-sm-6 col-xs-12">
+            <ul class="social-icons">
+              <li><a class="facebook" href="https://www.facebook.com/"><i class="fa fa-facebook"></i></a></li>
+              <li><a class="twitter" href="https://www.twitter.com/"><i class="fa fa-twitter"></i></a></li>
+              <li><a class="linkedin" href="https://www.linkedin.com/"><i class="fa fa-linkedin"></i></a></li>   
+            </ul>
+          </div>
+        </div>
+      </div>
+</footer>
