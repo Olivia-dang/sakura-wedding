@@ -1,8 +1,8 @@
 class TransactionsController < ApplicationController
     # Skip CSRF verification for stripe chechout form
     skip_before_action :verify_authenticity_token, only: [:create]
-    
     before_action :set_dress, only: [:create]
+    
     def create
         session = Stripe::Checkout::Session.create({
             payment_method_types: ['card'],
