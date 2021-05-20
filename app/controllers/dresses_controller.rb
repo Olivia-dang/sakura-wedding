@@ -2,7 +2,12 @@ class DressesController < ApplicationController
   before_action :set_dress, only: [:show, :edit, :update, :destroy]
   before_action :set_categories, only: [:edit, :new]
   before_action :authenticate_user!, only: [:new, :create, :edit, :update, :destroy, :show]
+  rescue_from Pundit::NotAuthorizedError, with: :unauthorised
 
+  def unauthorised
+    flash[:alert] = "You're not allowed! Only the owner can edit items!"
+    redirect_to dresses_path 
+  end
   # GET /dresses
   # GET /dresses.json
   def index
@@ -21,6 +26,7 @@ class DressesController < ApplicationController
 
   # GET /dresses/1/edit
   def edit
+    authorize @dress
   end
 
   # POST /dresses

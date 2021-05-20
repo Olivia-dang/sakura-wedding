@@ -56,6 +56,7 @@ if Category.count == 0
     end
 end 
 
+#Create dress samples
 prices = [111.11, 2222.22, 3333.33, 4444.44, 55.55, 666.66, 7.777, 8888.88, 9999.99, 4324.34, 1323.32, 5436.87]
 if Dress.count == 0
     prices.each_with_index do |(price), index|
