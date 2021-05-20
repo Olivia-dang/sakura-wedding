@@ -5,8 +5,8 @@ class DressesController < ApplicationController
   rescue_from Pundit::NotAuthorizedError, with: :unauthorised
 
   def unauthorised
-    flash[:alert] = "You're not allowed! Only the owner can edit items!"
-    redirect_to dresses_path 
+    flash[:alert] = "You're not allowed! Only the owner can edit their items!"
+    redirect_to dress_path 
   end
   # GET /dresses
   # GET /dresses.json
