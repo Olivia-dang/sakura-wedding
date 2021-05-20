@@ -6,11 +6,10 @@
 
 <div class= "container"> 
   <h3>All dresses</h3> 
-  <div class="card-deck d-flex justify-content-between align-items-stretch flex-wrap"> 
+  <div class="card-deck d-flex justify-content-start align-items-stretch flex-wrap"> 
     <% @dresses.each do |dress| %> 
         <div class="card mb-4" style="width: 270px;">
           <%= link_to image_tag(dress.picture, :alt => "Wedding Dress", class: "card-img-top"), dress_path(dress) if dress.picture.attached? %>
-
           <div class="card-body">
               <h5 class="card-title">
                 <%=link_to dress.name, dress_path(dress)%>

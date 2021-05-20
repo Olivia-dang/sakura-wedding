@@ -2,12 +2,13 @@
   <div class="d-inline-flex p-2 flex-wrap align-items-start">
     <%= image_tag @dress.picture, style: 'height:500px;width:auto;' if @dress.picture.attached? %>
     <div class="show-info">
-      <h4> <%= @dress.name%> </h4>
+      <h3> <%= @dress.name%> </h3>
       <h5> <%= @dress.category.name%> </h5>
       <p>Color: <%= @dress.color %></p>
       <p>Size: <%= @dress.size %></p>
       <p>Price: <strong>AUD$ <%= @dress.price %></strong></p>
-      <p>Seller: <%= @dress.user.username %></p>
+      <p>Seller: <%= link_to @dress.user.username.capitalize, users_showroom_path(@dress.user.id) %>
+       </p>
       <p>Product Description: <%= @dress.description %></p>
       <% if @dress.user == current_user %>
       <%=link_to 'Edit', edit_dress_path, class: "btn btn-warning"%>
@@ -17,9 +18,12 @@
       <% end %>
       <br>
       <br>
-      <%= link_to 'Back to Homepage', dresses_path, class: "btn btn-info" %>
+      <%= link_to 'Back', :back, class: "btn btn-outline-info" %>
+      <br>
+      <%= link_to 'See more from this seller', users_showroom_path(@dress.user.id), class: "btn btn-outline-info" %>
     </div>
   </div>
+
 </div>
 
 <script type="text/javascript">

@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get 'users/showroom'
   devise_for :users
   root 'dresses#index'
   resources :dresses
