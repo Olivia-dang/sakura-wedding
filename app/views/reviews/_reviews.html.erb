@@ -1,0 +1,12 @@
+<section>
+    <h3>Reviews</h3>
+    <hr class="my-4">
+    <% reviewable.reviews.each do |review| %>
+    <div class="well d-flex justify-content-start align-items-center flex-wrap">
+        <div>
+        <p>User: <strong><%= review.reviewer %></strong> </p>
+        <p><small><%= review.created_at.strftime("Posted on %d %B %Y") %></small></p>
+        </div>
+        <p class="review-content"><i><%= review.content %></i></p>
+    </div>
+<% end %>

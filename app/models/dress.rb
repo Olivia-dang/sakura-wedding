@@ -8,4 +8,5 @@ class Dress < ApplicationRecord
     belongs_to :category
     belongs_to :user
     has_one_attached :picture
+    has_many :reviews, as: :reviewable
 end

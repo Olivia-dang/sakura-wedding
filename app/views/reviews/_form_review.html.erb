@@ -1,0 +1,25 @@
+<h4>Add a review</h4>
+<hr>
+<%= form_for [reviewable, Review.new] do |form| %>
+    <% if reviewable.errors.any? %>
+    <div id="error_explanation">
+        <h2><%= pluralize(review.errors.count, "error") %> prohibited this review from being saved:</h2>
+        <ul>
+        <% reviewable.errors.each do |error| %>
+            <li><%= error.full_message %></li>
+        <% end %>
+        </ul>
+    </div>
+    <% end %>
+    <div class="field">
+        <p>Reviewer: <%= current_user.username %></p>
+    </div>
+    <br>
+    <div class="field">
+        <%= form.text_area :content, class: "form-control", placeholder: "Say something" %>
+    </div> 
+    <br>
+    <div class="actions">
+        <%= form.submit class: "btn btn-secondary" %>
+    </div>
+<% end %>

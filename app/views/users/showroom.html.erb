@@ -1,9 +1,9 @@
 <div class="container">
     <div class="page-header">
         <div class="page-header-text">
-        <h2 class="display-4"><%= @user_showroom.username %> Showroom</h2>
+        <h2 class="display-4"><%= @user.username %> Showroom</h2>
         <hr class="my-4">
-        <p>Welcome to <%= @user_showroom.username %> Showroom!</p>
+        <p>Welcome to <%= @user.username %> Showroom!</p>
             <a class="btn btn-primary btn-lg" href="#" role="button">Contact Seller</a>
         </p>
         </div>
@@ -30,4 +30,9 @@
         </div> 
     <%end%> 
     </div> 
+
+    <%= render partial: "reviews/reviews", locals: {reviewable: @user} %>
+    <%= render partial: "reviews/form_review", locals: {reviewable: @user} %>
+
+  </section>
 </div>

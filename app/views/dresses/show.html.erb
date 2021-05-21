@@ -7,7 +7,7 @@
       <p>Color: <%= @dress.color %></p>
       <p>Size: <%= @dress.size %></p>
       <p>Price: <strong>AUD$ <%= @dress.price %></strong></p>
-      <p>Seller: <%= link_to @dress.user.username.capitalize, users_showroom_path(@dress.user.id) %>
+      <p>Seller: <%= link_to @dress.user.username.capitalize, user_path(@dress.user.id) %>
        </p>
       <p>Product Description: <%= @dress.description %></p>
       <% if @dress.user == current_user %>
@@ -20,10 +20,11 @@
       <br>
       <%= link_to 'Back', :back, class: "btn btn-outline-info" %>
       <br>
-      <%= link_to 'See more from this seller', users_showroom_path(@dress.user.id), class: "btn btn-outline-info" %>
+      <%= link_to 'See more from this seller', user_path(@dress.user.id), class: "btn btn-outline-info" %>
     </div>
   </div>
-
+  <%= render partial: "reviews/reviews", locals: {reviewable: @dress} %>
+  <%= render partial: "reviews/form_review", locals: {reviewable: @dress} %>
 </div>
 
 <script type="text/javascript">

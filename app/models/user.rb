@@ -17,5 +17,8 @@ class User < ApplicationRecord
   scope :sellers, -> { joins(:sales) }
   #only give me all transactions with buyer_id 
   scope :buyers, -> { joins(:purchases) }
+  
+  #a user instance can have many reviews 
+  has_many :reviews, as: :reviewable
 
 end
