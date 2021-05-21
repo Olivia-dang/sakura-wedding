@@ -69,7 +69,7 @@ if Dress.count == 0
             price: price,
             price_in_cents: price*100,
             category_id: rand(1..8),
-            user_id: rand(1..7)
+            user_id: rand(1..6)
         )
         dress.picture.attach(io: File.open(Rails.root / 'docs' / 'dress_seeds' / "dress_#{index + 1}.jpg"), filename:"dress_#{index + 1}.jpg")
         puts "created dress number #{index + 1 }, price #{dress.price}, price in cents #{dress.price_in_cents}"
