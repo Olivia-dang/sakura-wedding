@@ -37,6 +37,7 @@ end
     puts "created user #{i + 1 }"
 end
 
+
 # Create categories
 categories = [
     "A-line",
@@ -68,9 +69,21 @@ if Dress.count == 0
             price: price,
             price_in_cents: price*100,
             category_id: rand(1..8),
-            user_id: rand(1..5)
+            user_id: rand(1..7)
         )
         dress.picture.attach(io: File.open(Rails.root / 'docs' / 'dress_seeds' / "dress_#{index + 1}.jpg"), filename:"dress_#{index + 1}.jpg")
         puts "created dress number #{index + 1 }, price #{dress.price}, price in cents #{dress.price_in_cents}"
     end 
 end 
+
+#Create admin user
+User.create(
+    username: "Admin",
+    first_name: "First",
+    last_name: "Last",
+    email: "admin@test.com",
+    phone_number: Faker::PhoneNumber.phone_number_with_country_code,
+    address: Faker::Address.full_address,
+    password: "password",
+    password_confirmation: "password"
+)
