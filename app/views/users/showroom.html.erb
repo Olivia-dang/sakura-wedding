@@ -4,10 +4,16 @@
         <h2 class="display-4"><%= @user.username %> Showroom</h2>
         <hr class="my-4">
         <p>Welcome to <%= @user.username %> Showroom!</p>
-            <a class="btn btn-primary btn-lg" href="mailto:hello@sakura-wedding.com" role="button">Contact Seller</a>
+            <% if @user != current_user %>
+                <a class="btn btn-primary btn-lg" href="mailto:hello@sakura-wedding.com" role="button">Contact Seller</a>
+            <% end %>
         </p>
         </div>
     </div>
+
+    <% if @user = current_user %>
+        <%= link_to 'Sell a Wedding Dress', new_dress_path, class:"btn btn-primary" %>
+    <% end %>
 
     <div class="card-deck d-flex flex-row justify-content-start align-items-stretch flex-wrap"> 
     <% @user_dresses.each do |dress| %> 
@@ -30,9 +36,9 @@
         </div> 
     <%end%> 
     </div> 
-
     <%= render partial: "reviews/reviews", locals: {reviewable: @user} %>
-    <%= render partial: "reviews/form_review", locals: {reviewable: @user} %>
-
+    <% if @user != current_user %>
+        <%= render partial: "reviews/form_review", locals: {reviewable: @user} %>
+    <% end %>
   </section>
 </div>

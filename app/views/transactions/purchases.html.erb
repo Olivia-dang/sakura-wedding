@@ -1,7 +1,15 @@
 <div class = "container">
-<h2>Purchases</h2>
-
-<%= render 'form', transactions: @purchases %>
-
-<%= link_to 'Back', :back, class:"btn btn-outline-info" %>
+    <h1>Account Management</h1> 
+    
+    <div class="sidebar">
+        <%= link_to 'Account Information', profile_path %>
+        <%= link_to 'Purchases history', purchases_path, class: 'active' %>
+        <%= link_to 'Sales history', sales_path %>
+        <%= link_to "#{current_user.username.capitalize}'s showroom", user_path(current_user.id) %>
+    </div>
+    <div class="content">
+        <h3>All Purchases</h3>
+        <%= render 'form', transactions: @purchases %>
+        <%= link_to 'Back to previous page', :back, class:"btn btn-outline-info" %>
+    </div>
 </div>

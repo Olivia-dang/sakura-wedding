@@ -1,18 +1,19 @@
 <div class="container">
-<h1>Account Management</h1> 
-<h3>Account Overview</h3>
-<p>Email: <%= current_user.email %></p>
-<p>Username: <%= current_user.username %></p>
-<p>First name: <%= current_user.first_name %></p>
-<p>Last name: <%= current_user.last_name %></p>
-<p>Phone number: <%= current_user.phone_number %></p>
-<p>Address: <%= current_user.address %></p>
-
-<%= link_to 'Edit Account', edit_user_registration_path, class: "btn btn-warning" %>
-<br>
-<%= link_to 'Purchases history', purchases_path %>
-<br>
-<%= link_to 'Sales history', sales_path %>
-<br>
-<p> My showroom: <%= link_to current_user.username.capitalize, user_path(current_user.id) %></p>
+    <h1>Account Management</h1> 
+    <div class="sidebar">
+        <%= link_to 'Account Information', profile_path, class: 'active' %>
+        <%= link_to 'Purchases history', purchases_path %>
+        <%= link_to 'Sales history', sales_path %>
+        <%= link_to "#{current_user.username.capitalize}'s showroom", user_path(current_user.id) %>
+    </div>
+    <div class="content">
+        <h3>Account information</h3>
+        <p>Email: <%= current_user.email %></p>
+        <p>Username: <%= current_user.username %></p>
+        <p>First name: <%= current_user.first_name %></p>
+        <p>Last name: <%= current_user.last_name %></p>
+        <p>Phone number: <%= current_user.phone_number %></p>
+        <p>Address: <%= current_user.address %></p>
+        <%= link_to 'Edit Account', edit_user_registration_path, class: "btn btn-warning" %>
+    </div>
 </div>

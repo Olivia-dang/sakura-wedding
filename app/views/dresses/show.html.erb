@@ -24,7 +24,9 @@
     </div>
   </div>
   <%= render partial: "reviews/reviews", locals: {reviewable: @dress} %>
+  <% if @dress.user != current_user %>
   <%= render partial: "reviews/form_review", locals: {reviewable: @dress} %>
+  <% end %>
 </div>
 
 <script type="text/javascript">
