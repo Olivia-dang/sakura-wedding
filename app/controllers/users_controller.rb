@@ -1,7 +1,9 @@
 class UsersController < ApplicationController
-  before_action :set_users_showroom
+  before_action :set_users_showroom, only: [:showroom]
   before_action :showroom_params, only: [:showroom]
   def showroom
+  end
+  def profile
   end
 
   private

@@ -1,0 +1,25 @@
+<table class="table table-striped">
+  <% if transactions.count == 0 %>
+    <p>There is no record</p>
+  <% end %>
+  <tbody>
+    <% transactions.each do |transaction| %>
+    <tr>
+      <td>
+        <p>Order references: #<%= transaction.id %></p>
+        <p>Seller: <%= link_to transaction.seller.username.capitalize, user_path(transaction.seller.id) %></p>
+        <p>Order date: <%= transaction.created_at.strftime("%I %p, %d %B %Y, %:z") %></p> 
+      </td>
+      <td>
+          <%= link_to image_tag(transaction.dress.picture, :alt => "Wedding Dress", height: "200px"), dress_path(transaction.dress) if transaction.dress.picture.attached? %>
+      </td>
+      <td>
+        <p>Item name: <%= link_to transaction.dress.name, dress_path(transaction.dress) %></p>
+        <p>Price: AUD$<strong><%= transaction.dress.price %></strong></p>
+        <p>Color: <%= transaction.dress.color %></p>
+        <p>Size: <%= transaction.dress.size %></p>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>
