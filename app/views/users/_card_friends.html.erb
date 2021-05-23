@@ -1,7 +1,11 @@
 <ul>
-<% users.each do |user| %>
-<li>
-  <%= user.username %> | <%= link_to 'send a message', new_message_path(receiver_id: user) %>
-</li>
-<% end %>
+  <% users.each do |user| %>
+    <% if user == current_user %>
+      <li>
+        <%= link_to "#{user.username}(Yourself)", new_message_path(receiver_id: user) %>
+      </li>
+    <% else %>
+        <li><%= link_to user.username, new_message_path(receiver_id: user) %></li>
+    <% end %>
+  <% end %>
 </ul>

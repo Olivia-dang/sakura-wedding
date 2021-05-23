@@ -1,16 +1,26 @@
-<h1>Chatting with <%= @conversation.with(current_user).username %></h1>
-
-<!-- render all existing messages, then a form to add more messages -->
-<div id="conversation-main">
-  <div id="conversation-body">
-    <%= render 'messages/messages', messages: @conversation.messages %>
+<div class="container d-flex justify-content-start flex-row">
+  <div class="all-users col-30">
+    <h3><%= link_to 'All Conversations', conversations_path %></h3>
+    <hr>
+    <h3>Contacts</h3>
+    <%= render 'users/card_friends', users: @users  %>
   </div>
+  <div class="col-70">
+    <h1>Chatting with <%= @conversation.with(current_user).username %></h1>
 
-  <%= form_for @message do |f| %>
-    <%= hidden_field_tag 'conversation_id', @conversation.id %>
-    <%= f.label :body %>
-    <%= f.text_area :body %>
+    <!-- render all existing messages, then a form to add more messages -->
+    <div id="conversation-main">
+      <div id="conversation-body">
+        <%= render 'messages/messages', messages: @conversation.messages %>
+      </div>
 
-    <%= f.submit %>
-  <% end %>
+      <%= form_for @message do |f| %>
+        <%= hidden_field_tag 'conversation_id', @conversation.id %>
+        <%= f.text_area :body %>
+        <br>
+        <%= f.submit %>
+      <% end %>
+    </div>
+  </div>
+  
 </div>

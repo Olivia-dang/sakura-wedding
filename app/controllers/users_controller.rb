@@ -1,13 +1,10 @@
 class UsersController < ApplicationController
   before_action :set_users_showroom, only: [:showroom]
   before_action :showroom_params, only: [:showroom]
-  before_action :authenticate_user!, only: [:showroom, :profile, :friends]
+  before_action :authenticate_user!, only: [:showroom, :profile]
   def showroom
   end
   def profile
-  end
-  def friends
-    @users = User.all 
   end
 
   private

@@ -1,5 +1,14 @@
-<h1>Your Inbox</h1>
-
-<div id="conversations">
-  <%= render @conversations %>
+<div class="container d-flex justify-content-start flex-row">
+  <div class="all-users col-30">
+    <h3><%= link_to 'All Conversations', conversations_path %></h3>
+    <hr>
+    <h3>Contacts</h3>
+    <%= render 'users/card_friends', users: @users  %>
+  </div>
+  <div clas="col-70">
+    <h1>Inbox</h1>
+    <div id="conversations">
+      <%= render @conversations %>
+    </div>
+  </div>
 </div>

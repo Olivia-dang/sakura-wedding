@@ -1,5 +1,4 @@
 Rails.application.routes.draw do
-  get '/friends', to: 'users#friends', as: 'friends'
   resources :messages, only: [:new, :create]
   resources :conversations, only: [:show, :index]
   

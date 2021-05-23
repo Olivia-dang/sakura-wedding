@@ -1,6 +1,8 @@
 <% messages.each do |message| %>
-  <p>at <strong><%= message.created_at %></strong><br>
-    by <strong><%= message.user.username %></strong></p>
-  <p><%= message.body %></p>
+  <p class="by-at">
+    by <strong><%= message.user.username %></strong> 
+    at <strong><%= message.created_at.in_time_zone('Sydney') %></strong>
+  </p>
+  <p class="message-body"><%= message.body %></p>
   <hr>
 <% end %>

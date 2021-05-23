@@ -1,11 +1,11 @@
 <div class = "container">
     <h1>Account Management</h1> 
-    
     <div class="sidebar">
         <%= link_to 'Account Information', profile_path %>
         <%= link_to 'Purchases history', purchases_path, class: 'active' %>
         <%= link_to 'Sales history', sales_path %>
         <%= link_to "#{current_user.username.capitalize}'s showroom", user_path(current_user.id) %>
+        <%= link_to 'Inbox', conversations_path %>
     </div>
     <div class="content">
         <h3>All Purchases</h3>

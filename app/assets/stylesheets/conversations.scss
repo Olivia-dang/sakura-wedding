@@ -6,4 +6,30 @@
     max-height: 400px;
     overflow-y: auto;
     margin-bottom: 2em;
+    hr {
+      margin: 2px auto;
+    };
+    .by-at {
+      color: #32a85a;
+    }
+    .message-body {
+      margin-left: 15px;
+    }
+  }
+  .col-30 {
+    width: 20%;
+    min-width: 190px;
+    border: 3px solid #ED8A85;
+    border-radius: 5%;
+    margin-right: 20px;
+    margin-top: 20px;
+    padding-left: 10px;
+    h3 a {
+      color: #000;
+    }
+  }
+  #conversations {
+    hr {
+      margin: 2px auto;
+    }
   }

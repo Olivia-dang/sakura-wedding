@@ -1,10 +1,20 @@
-<h1>New message to <%= @receiver.username %></h1>
+<div class="container d-flex justify-content-start flex-row">
+   <div class="all-users col-30">
+    <h3><%= link_to 'All Conversations', conversations_path %></h3>
+    <hr>
+    <h3>Contacts</h3>
+    <%= render 'users/card_friends', users: @users  %>
+  </div>
 
-<%= form_for @message do |f| %>
-  <%= hidden_field_tag 'receiver_id', @receiver.id %>
+  <div class="col-70">
+    <h1>New message to <%= @receiver.username %></h1>
 
-  <%= f.label :body %>
-  <%= f.text_area :body %>
+    <%= form_for @message do |f| %>
+      <%= hidden_field_tag 'receiver_id', @receiver.id %>
 
-  <%= f.submit %>
-<% end %>
+      <%= f.text_area :body %>
+      <br>
+      <%= f.submit %>
+    <% end %>
+  </div>
+</div>
