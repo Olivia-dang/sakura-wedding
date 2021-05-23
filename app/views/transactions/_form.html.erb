@@ -8,6 +8,7 @@
       <td>
         <p>Order references: #<%= transaction.id %></p>
         <p>Seller: <%= link_to transaction.seller.username.capitalize, user_path(transaction.seller.id) %></p>
+        <p>Buyer: <%= link_to transaction.buyer.username.capitalize, user_path(transaction.buyer.id) %></p>
         <p>Order date: <%= transaction.created_at.strftime("%I %p, %d %B %Y, %:z") %></p> 
       </td>
       <td>
