@@ -3,6 +3,9 @@ class TransactionsController < ApplicationController
     skip_before_action :verify_authenticity_token, only: [:create]
     before_action :set_dress, only: [:create]
 
+    #enforcing users to authenticate
+    before_action :authenticate_user!
+
     def create      
         #Create new transaction before redirecting to Stripe
         @transaction = current_user.purchases.create(seller_id: @dress.user_id, dress_id: @dress.id, amount: ((@dress.price_in_cents/100).to_f))

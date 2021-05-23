@@ -1,8 +1,12 @@
 Rails.application.routes.draw do
+  get '/friends', to: 'users#friends', as: 'friends'
+  resources :messages, only: [:new, :create]
+  resources :conversations, only: [:show, :index]
+  
   devise_for :users 
   root 'dresses#index'
 
-  resources :users, only: [:showroom ]do
+  resources :users, only: [:showroom, ]do
     resources :reviews, module: :users
   end
 

@@ -1,0 +1,6 @@
+<% messages.each do |message| %>
+  <p>at <strong><%= message.created_at %></strong><br>
+    by <strong><%= message.user.username %></strong></p>
+  <p><%= message.body %></p>
+  <hr>
+<% end %>
