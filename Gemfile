@@ -72,3 +72,5 @@ gem "stripe", "~> 5.32"
 gem 'faker'
 
 gem "pundit"
+
+gem "pg_search"

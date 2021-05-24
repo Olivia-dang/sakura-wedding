@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get '/about', to: 'pages#about', as: 'about_us'
   get '/contact', to: 'pages#contact', as: 'contact_us'
 
+  #GET '/search'
+  get '/search' => 'pages#search', :as => 'search_page'
+
   #routing of transactions
   resources :transactions, only: [:create, :show]
   get 'checkout/success', to: 'transactions#success', as: 'checkout_successful'
