@@ -1,5 +1,6 @@
 require 'rails_helper'
+require "models/concerns/reviewable_spec"
 
 RSpec.describe User, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  it_behaves_like "reviewable"
 end

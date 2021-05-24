@@ -28,7 +28,7 @@ end
         username: Faker::Games::Pokemon.name,
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
-        email: Faker::Internet.email,
+        email: "user#{i+1}@test.com",
         phone_number: Faker::PhoneNumber.phone_number_with_country_code,
         address: Faker::Address.full_address,
         password: "password",

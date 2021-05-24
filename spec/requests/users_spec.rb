@@ -1,10 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe "Users", type: :request do
-  describe "GET /showroom" do
+  describe "GET user/showroom" do
     it "returns http success" do
-      get "/users/showroom"
-      expect(response).to have_http_status(:success)
+      get "/user/showroom"
+      expect(response).to have_http_status(302)
     end
   end
 

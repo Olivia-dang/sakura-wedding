@@ -1,4 +1,5 @@
 require 'rails_helper'
+require "models/concerns/reviewable_spec"
 
 RSpec.describe Dress, type: :model do
   it "should be a Dress" do
@@ -22,4 +23,5 @@ RSpec.describe Dress, type: :model do
         expect(subject).to respond_to :price
     end
   end
+  it_behaves_like "reviewable"
 end

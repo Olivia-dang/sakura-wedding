@@ -1,7 +1,8 @@
 class MessagesController < ApplicationController
     before_action :find_conversation!
     before_action :set_users, only: [:new]
-    
+    before_action :authenticate_user!
+
     def new
         redirect_to conversation_path(@conversation) and return if @conversation
         @message = current_user.messages.build
