@@ -9,7 +9,7 @@
         <p>Order references: #<%= transaction.id %></p>
         <p>Seller: <%= link_to transaction.seller.username.capitalize, user_path(transaction.seller.id) %></p>
         <p>Buyer: <%= link_to transaction.buyer.username.capitalize, user_path(transaction.buyer.id) %></p>
-        <p>Order date: <%= transaction.created_at.strftime("%I %p, %d %B %Y, %:z") %></p> 
+        <p>Order date: <%= transaction.created_at.in_time_zone('Sydney').strftime("%I:%M:%S %p, %d %B %Y, %:z") %></p> 
       </td>
       <td>
           <%= link_to image_tag(transaction.dress.picture, :alt => "Wedding Dress", height: "200px"), dress_path(transaction.dress) if transaction.dress.picture.attached? %>

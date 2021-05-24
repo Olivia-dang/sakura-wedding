@@ -20,7 +20,7 @@
 
   <div class="field">
     <%= form.label :category_id %>
-    <%= form.select :category_id, options_for_select(@categories.map{|category| [category.name, category.id]}), {}, class: "form-control" %>
+    <%= form.select :category_id, options_for_select(@categories.map{|category| [category.name, category.id]}), {}, class: "form-select form-select-lg mb-3" %>
   </div>
 
   <div class="field">
@@ -30,7 +30,7 @@
 
   <div class="field">
     <%= form.label :size %>
-    <%= form.select :size, options_for_select(["4","6","8","10","12","14","16 or above"]), {}, class: "form-control"%>
+    <%= form.select :size, options_for_select(["4","6","8","10","12","14","16 or above"]), {}, class: "form-select form-select-lg mb-3"%>
 
   </div>
 

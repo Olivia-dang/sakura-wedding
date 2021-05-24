@@ -20,7 +20,7 @@
                 <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
                 <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
               <% else %>
-                <%=link_to 'Buy now', dress_path(dress), class: "btn btn-primary"%>
+                <%=link_to 'See details', dress_path(dress), class: "btn btn-primary"%>
               <% end %>
           </div>
         </div> 
