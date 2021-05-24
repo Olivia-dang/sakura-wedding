@@ -11,7 +11,7 @@
         </div>
     </div>
 
-    <% if @user = current_user %>
+    <% if @user == current_user %>
         <%= link_to 'Sell a Wedding Dress', new_dress_path, class:"btn btn-primary" %>
     <% end %>
 
