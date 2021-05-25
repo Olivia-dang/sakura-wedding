@@ -5,7 +5,7 @@ class User < ApplicationRecord
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :timeoutable
-  has_many :dresses
+  has_many :dresses, dependent: :destroy
 
   #declare relationships with the Transaction
   has_many :sales, class_name: "Transaction", foreign_key: :seller_id, dependent: :destroy 
