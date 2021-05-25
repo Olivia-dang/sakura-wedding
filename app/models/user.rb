@@ -13,9 +13,9 @@ class User < ApplicationRecord
   has_many :purchases, class_name: "Transaction", foreign_key: :buyer_id, dependent: :destroy 
   has_many :purchased_dresses, through: :purchases, source: :dress, dependent: :destroy 
 
-  #only give me all transactions with seller_id 
+  #give me all transactions with seller_id 
   scope :sellers, -> { joins(:sales) }
-  #only give me all transactions with buyer_id 
+  #give me all transactions with buyer_id 
   scope :buyers, -> { joins(:purchases) }
   
   #a user instance can have many reviews 
