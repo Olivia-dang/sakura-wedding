@@ -50,8 +50,8 @@ ActiveRecord::Schema.define(version: 2021_05_23_041610) do
   end
 
   create_table "conversations", force: :cascade do |t|
-    t.integer "sender_id"
-    t.integer "receiver_id"
+    t.bigint "sender_id", null: false
+    t.bigint "receiver_id", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["receiver_id"], name: "index_conversations_on_receiver_id"
@@ -124,6 +124,8 @@ ActiveRecord::Schema.define(version: 2021_05_23_041610) do
 
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
+  add_foreign_key "conversations", "users", column: "receiver_id"
+  add_foreign_key "conversations", "users", column: "sender_id"
   add_foreign_key "dresses", "categories"
   add_foreign_key "dresses", "users"
   add_foreign_key "messages", "conversations"
