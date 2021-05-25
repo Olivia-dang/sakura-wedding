@@ -3,23 +3,6 @@
     <% if @results.empty? %>
         <p>No item found</p>
     <% else %>
-        <table class="table table-striped"> 
-            <tbody>
-            <% @results.each do |result| %>  
-                <tr>
-                    <td>
-                        <%= link_to image_tag(result.picture, :alt => "Wedding Dress", height: "200px"), dress_path(result) if result.picture.attached? %>
-                    </td>
-                    <td>
-                        <p>Item name: <%= link_to result.name, dress_path(result) %></p>
-                        <p>Price: AUD$<strong><%= result.price %></strong></p>
-                        <p>Color: <%= result.color %></p>
-                        <p>Size: <%= result.size %></p>
-                        <p>Seller: <%= link_to result.user.username.capitalize, user_path(result.user) %></p>
-                    </td>  
-                </tr>
-            <% end %>
-            </tbody>
-        </table>
+        <%= render 'dresses/card', dresses: @results %>        
     <% end %>
 </div> 

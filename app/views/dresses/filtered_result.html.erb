@@ -1,0 +1,23 @@
+<div class= "container mt-5"> 
+
+  <!-- Filter function -->
+  <%= form_for :query, url: filtered_result_path, method: :get do |form| %>
+    <div class="field">
+      <%= form.label :keyword %>
+      <%= form.text_field :text, placeholder: 'Search...', value: params.dig('query', 'text') %>
+    </div>
+    <br>
+    <div class="field">
+      <%= form.label :category %>
+      <%= form.select :category_id, 
+        [['A-line', 1], ['Ball-Gown', 2], ['Trumpet', 3], ['Mermaid', 4], ['Sheath', 5], ['Jumpsuit', 6], ['Tea-Length', 7], ['Others', 8]], 
+        include_blank: true, selected: params.dig('query', 'category_id') %>
+      <%= form.submit 'Filter' %>
+    </div>
+    <br>
+  <% end  %>
+
+  <!-- Cards of dresses -->
+  <%= render 'card', dresses: @dresses %>
+  
+</div>

@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   resources :dresses do 
     resources :reviews, module: :dresses
   end
+
+  get '/filtered_result', to: 'dresses#filtered_result', as: 'filtered_result'
   #routing to about and contact page
   get '/about', to: 'pages#about', as: 'about_us'
   get '/contact', to: 'pages#contact', as: 'contact_us'

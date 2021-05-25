@@ -47,7 +47,7 @@ categories = [
     "Sheath", 
     "Jumpsuit",
     "Tea-Length",
-    "Others"
+    "Tea-Length"
 ]
 
 if Category.count == 0  

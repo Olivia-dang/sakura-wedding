@@ -3,7 +3,7 @@
     <%= image_tag @dress.picture, style: 'height:500px;width:auto;' if @dress.picture.attached? %>
     <div class="show-info">
       <h3> <%= @dress.name%> </h3>
-      <h5> <%= @dress.category.name%> </h5>
+      <h5>Category: <%= @dress.category.name%> </h5>
       <p>Color: <%= @dress.color %></p>
       <p>Size: <%= @dress.size %></p>
       <p>Price: <strong>AUD$ <%= @dress.price %></strong></p>

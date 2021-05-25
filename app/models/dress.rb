@@ -11,7 +11,7 @@ class Dress < ApplicationRecord
     has_many :reviews, as: :reviewable, dependent: :destroy 
     has_many :transactions, dependent: :destroy
     
-    include PgSearch
+    include PgSearch::Model
     scope :sorted, ->{ order(name: :asc) }
     pg_search_scope :search,
                     against: [
@@ -33,4 +33,7 @@ class Dress < ApplicationRecord
         Dress.all
         end.sorted
     end
+
+    scope :filtered, ->(query_params) { Dress::Filter.new.filter(self, query_params) }
+    
 end

@@ -14,6 +14,10 @@ class DressesController < ApplicationController
     @dresses = Dress.all
   end
 
+  def filtered_result
+    @dresses = Dress.filtered(query_params)
+  end
+
   # GET /dresses/1
   # GET /dresses/1.json
   def show
@@ -87,4 +91,8 @@ class DressesController < ApplicationController
       @categories = Category.all
     end 
 
+    def query_params
+      query_params = params[:query]
+      query_params ? query_params.permit(:text, :category_id) : {}
+    end
 end

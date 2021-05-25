@@ -1,0 +1,20 @@
+  <div class="card-deck d-flex justify-content-start align-items-stretch flex-wrap"> 
+    <% dresses.each do |dress| %> 
+        <div class="card mb-4" style="width: 270px;">
+          <%= link_to image_tag(dress.picture, :alt => "Wedding Dress", class: "card-img-top"), dress_path(dress) if dress.picture.attached? %>
+          <div class="card-body">
+              <h5 class="card-title">
+                <%=link_to dress.name.truncate(39), dress_path(dress)%>
+              </h5>
+              <h6 class="card-subtitle mb-2 text-muted"><%=dress.color%></h6>
+              <p class="card-text mt-2">AUD$<%=dress.price %></p>
+              <% if dress.user == current_user %>
+                <%=link_to 'Edit', edit_dress_path(dress), class: "btn btn-warning"%>
+                <%=link_to 'Delete', dress_path(dress), class: "btn btn-danger", method: "delete", data: { confirm: "Are you sure?" }%>
+              <% else %>
+                <%=link_to 'See details', dress_path(dress), class: "btn btn-primary"%>
+              <% end %>
+          </div>
+        </div> 
+    <%end%> 
+  </div> 
