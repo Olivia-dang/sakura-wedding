@@ -8,7 +8,7 @@ class TransactionsController < ApplicationController
 
     def create      
         #Create new transaction before redirecting to Stripe
-        @transaction = current_user.purchases.create(seller_id: @dress.user_id, dress_id: @dress.id, amount: ((@dress.price_in_cents/100).to_f))
+        @transaction = current_user.purchases.create(seller_id: @dress.user_id, dress_id: @dress.id, amount: @dress.price_in_cents)
         
         #Redirect to Stripe payment page
         session = Stripe::Checkout::Session.create({

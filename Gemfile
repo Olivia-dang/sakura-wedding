@@ -59,18 +59,23 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem "rspec-rails", group: [:development, :test]
 
+# Bootstrap and its dependence 
 gem 'bootstrap-sass'
 
 gem 'jquery-rails'
 
+# Add devise for authorisation
 gem 'devise'
 
+# AWS for image upload
 gem "aws-sdk-s3", "~> 1.94"
 
 gem "stripe", "~> 5.32"
 
+# Add Faker to help creating sample data in seed.rb
 gem 'faker'
 
+# Add Pundit for authorisation
 gem "pundit"
 
 gem "pg_search"
