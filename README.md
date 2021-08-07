@@ -5,7 +5,6 @@ https://sakura-wedding.herokuapp.com/
 
 > ## R10 A link to your GitHub repository (repo).
 https://github.com/Olivia-dang/sakura-wedding
-![alt text](./docs/screenshots/github.jpg)
 
 
 > ## Project Management - Trello
