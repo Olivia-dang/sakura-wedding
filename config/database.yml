@@ -81,6 +81,4 @@ test:
 #
 production:
   <<: *default
-  database: wedding_dress_marketplace_production
-  username: wedding_dress_marketplace
-  password: <%= ENV['WEDDING_DRESS_MARKETPLACE_DATABASE_PASSWORD'] %>
+  url: <%= ENV['DATABASE_URL'] %>
