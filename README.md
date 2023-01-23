@@ -6,8 +6,6 @@ Fast-track Sydney, 2021
 
 n.b. My AWS S3 has been expired, Heroku is no longer free, so I have changed some parts to deploy on Render
 
-Expired url: <https://sakura-wedding.herokuapp.com/>
-
 > ## GitHub repository
 
 <https://github.com/Olivia-dang/sakura-wedding>
