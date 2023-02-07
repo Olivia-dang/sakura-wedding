@@ -1,14 +1,4 @@
-Fast-track Sydney, 2021
-
-> ## Link (URL) to your deployed app (i.e. website)
-
-<https://mysite-1sib.onrender.com/>
-
-n.b. My AWS S3 has been expired, Heroku is no longer free, so I have changed some parts to deploy on Render
-
-> ## GitHub repository
-
-<https://github.com/Olivia-dang/sakura-wedding>
+Sydney, 2021
 
 > ## Project Management - Trello
 
@@ -242,7 +232,7 @@ Clients who are interested in looking for a wedding dress at affordable prices, 
     - CSS Framework:
         - Bootstrap
     - Image cloud storage:
-        - Amazon Web Services
+        - Amazon Web Services 
     - Payment Gateway:
         - Stripe
     - Version Control:
@@ -254,7 +244,7 @@ Clients who are interested in looking for a wedding dress at affordable prices, 
         - Figma
     - Tool to draw ERD and database tables:
         - Draw.io
-
+`(n.b. My AWS S3 has been expired, Heroku is no longer free, so I have changed some parts to avoid billing`
 > ## R12 User stories for your app
 
 - User
